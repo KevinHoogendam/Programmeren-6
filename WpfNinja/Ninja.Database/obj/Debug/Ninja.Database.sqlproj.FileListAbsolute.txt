@@ -1,0 +1,9 @@
+c:\Users\Kevin\documents\visual studio 2015\Projects\WpfNinja\Ninja.Database\bin\Debug\Ninja.Database.dacpac
+c:\Users\Kevin\documents\visual studio 2015\Projects\WpfNinja\Ninja.Database\bin\Debug\Ninja.Database.dll
+c:\Users\Kevin\documents\visual studio 2015\Projects\WpfNinja\Ninja.Database\bin\Debug\Ninja.Database.pdb
+c:\Users\Kevin\documents\visual studio 2015\Projects\WpfNinja\Ninja.Database\obj\Debug\Ninja.Database.dll
+c:\Users\Kevin\documents\visual studio 2015\Projects\WpfNinja\Ninja.Database\obj\Debug\Ninja.Database.pdb
+C:\Users\Kevin\Documents\Visual Studio 2015\Projects\WpfNinja\Ninja.Database\obj\Debug\Model.xml
+C:\Users\Kevin\Documents\Visual Studio 2015\Projects\WpfNinja\Ninja.Database\obj\Debug\refactor.xml
+C:\Users\Kevin\Documents\Visual Studio 2015\Projects\WpfNinja\Ninja.Database\obj\Debug\postdeploy.sql
+C:\Users\Kevin\Documents\Visual Studio 2015\Projects\WpfNinja\Ninja.Database\obj\Debug\predeploy.sql
