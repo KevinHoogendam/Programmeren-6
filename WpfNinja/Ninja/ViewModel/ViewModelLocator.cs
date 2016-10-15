@@ -43,6 +43,8 @@ namespace Ninja.ViewModel
             ////}
 
             SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<CategoryListViewModel>();
+            SimpleIoc.Default.Register<GearListViewModel>();
         }
 
         public MainViewModel Main
@@ -52,7 +54,23 @@ namespace Ninja.ViewModel
                 return ServiceLocator.Current.GetInstance<MainViewModel>();
             }
         }
-        
+
+        public CategoryListViewModel CategoryList
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<CategoryListViewModel>();
+            }
+        }
+
+        public GearListViewModel GearList
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<GearListViewModel>();
+            }
+        }
+
         public static void Cleanup()
         {
             // TODO Clear the ViewModels

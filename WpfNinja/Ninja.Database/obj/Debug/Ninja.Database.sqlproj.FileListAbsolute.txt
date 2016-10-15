@@ -16,3 +16,8 @@ C:\Users\khoog\Documents\GitHub\Programmeren-6\WpfNinja\Ninja.Database\obj\Debug
 C:\Users\khoog\Documents\GitHub\Programmeren-6\WpfNinja\Ninja.Database\obj\Debug\refactor.xml
 C:\Users\khoog\Documents\GitHub\Programmeren-6\WpfNinja\Ninja.Database\obj\Debug\postdeploy.sql
 C:\Users\khoog\Documents\GitHub\Programmeren-6\WpfNinja\Ninja.Database\obj\Debug\predeploy.sql
+C:\Users\Roel\Documents\GitHub\Programmeren-6\WpfNinja\Ninja.Database\bin\Debug\Ninja.Database.dacpac
+C:\Users\Roel\Documents\GitHub\Programmeren-6\WpfNinja\Ninja.Database\bin\Debug\Ninja.Database.dll
+C:\Users\Roel\Documents\GitHub\Programmeren-6\WpfNinja\Ninja.Database\bin\Debug\Ninja.Database.pdb
+C:\Users\Roel\Documents\GitHub\Programmeren-6\WpfNinja\Ninja.Database\obj\Debug\Ninja.Database.dll
+C:\Users\Roel\Documents\GitHub\Programmeren-6\WpfNinja\Ninja.Database\obj\Debug\Ninja.Database.pdb

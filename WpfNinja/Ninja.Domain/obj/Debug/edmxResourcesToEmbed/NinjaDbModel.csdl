@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NinjaDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Ninja">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+    <Property Name="Gold" Type="Int32" />
+    <NavigationProperty Name="Gears" Relationship="NinjaDbModel.NinjaHasGear" FromRole="Ninja" ToRole="Gear" />
+  </EntityType>
+  <EntityContainer Name="NinjaDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Ninjas" EntityType="Self.Ninja" />
+    <EntitySet Name="C__RefactorLog" EntityType="NinjaDbModel.C__RefactorLog" />
+    <EntitySet Name="Categories" EntityType="NinjaDbModel.Category" />
+    <EntitySet Name="Gears" EntityType="NinjaDbModel.Gear" />
+    <AssociationSet Name="FK_Gear_Category" Association="NinjaDbModel.FK_Gear_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Gear" EntitySet="Gears" />
+    </AssociationSet>
+    <AssociationSet Name="NinjaHasGear" Association="NinjaDbModel.NinjaHasGear">
+      <End Role="Gear" EntitySet="Gears" />
+      <End Role="Ninja" EntitySet="Ninjas" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="C__RefactorLog">
+    <Key>
+      <PropertyRef Name="OperationKey" />
+    </Key>
+    <Property Name="OperationKey" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Gears" Relationship="NinjaDbModel.FK_Gear_Category" FromRole="Category" ToRole="Gear" />
+  </EntityType>
+  <EntityType Name="Gear">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="GoldValue" Type="Int32" Nullable="false" />
+    <Property Name="Strength" Type="Int32" />
+    <Property Name="Intelligence" Type="Int32" />
+    <Property Name="agility" Type="Int32" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Category" Relationship="NinjaDbModel.FK_Gear_Category" FromRole="Gear" ToRole="Category" />
+    <NavigationProperty Name="Ninjas" Relationship="NinjaDbModel.NinjaHasGear" FromRole="Gear" ToRole="Ninja" />
+  </EntityType>
+  <Association Name="FK_Gear_Category">
+    <End Type="NinjaDbModel.Category" Role="Category" Multiplicity="1" />
+    <End Type="NinjaDbModel.Gear" Role="Gear" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Gear">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="NinjaHasGear">
+    <End Type="NinjaDbModel.Gear" Role="Gear" Multiplicity="*" />
+    <End Type="NinjaDbModel.Ninja" Role="Ninja" Multiplicity="*" />
+  </Association>
+</Schema>

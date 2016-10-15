@@ -51,6 +51,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Category.cs">
+      <DependentUpon>NinjaDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C__RefactorLog.cs">
+      <DependentUpon>NinjaDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Gear.cs">
+      <DependentUpon>NinjaDbModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Ninja.cs">
       <DependentUpon>NinjaDbModel.tt</DependentUpon>
     </Compile>
