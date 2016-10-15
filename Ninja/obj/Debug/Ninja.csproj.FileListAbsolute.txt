@@ -1,2 +1,0 @@
-c:\users\khoog_000\documents\visual studio 2013\Projects\Ninja\Ninja\bin\Debug\Ninja.exe.config
-C:\Users\Kevin\Documents\GitHub\Programmeren-6\Ninja\bin\Debug\Ninja.exe.config

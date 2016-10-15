@@ -63,11 +63,20 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Ninja.sql" />
+    <Build Include="Tables\Category.sql" />
+    <Build Include="Tables\Gear.sql" />
+    <Build Include="Tables\NinjaHasGear.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Seed\Ninja.sql" />
+    <None Include="Scripts\Seed\Category.sql" />
+    <None Include="Scripts\Seed\Gear.sql" />
+    <None Include="Scripts\Seed\NinjaHasGear.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="Ninja.Database.refactorlog" />
   </ItemGroup>
 </Project>

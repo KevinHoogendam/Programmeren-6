@@ -31,3 +31,6 @@ C:\Users\Kevin\Documents\Visual Studio 2015\Projects\WpfNinja\Ninja\obj\Debug\Ni
 C:\Users\Kevin\Documents\Visual Studio 2015\Projects\WpfNinja\Ninja\obj\Debug\Ninja.csproj.GenerateResource.Cache
 C:\Users\Kevin\Documents\Visual Studio 2015\Projects\WpfNinja\Ninja\obj\Debug\Ninja.exe
 C:\Users\Kevin\Documents\Visual Studio 2015\Projects\WpfNinja\Ninja\obj\Debug\Ninja.pdb
+C:\Users\khoog\Documents\GitHub\Programmeren-6\WpfNinja\Ninja\bin\Debug\Ninja.exe.config
+C:\Users\khoog\Documents\GitHub\Programmeren-6\WpfNinja\Ninja\obj\Debug\Ninja.exe
+C:\Users\khoog\Documents\GitHub\Programmeren-6\WpfNinja\Ninja\obj\Debug\Ninja.pdb

@@ -11,3 +11,6 @@ Post-Deployment Script Template
 */
 
 :r .\Seed\Ninja.sql
+:r .\Seed\Category.sql
+:r .\Seed\Gear.sql
+:r .\Seed\NinjaHasGear.sql
