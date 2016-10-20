@@ -15,7 +15,13 @@ namespace Ninja.Model
             using (var context = new NinjaDbEntities())
             {
                 Gear gear = new Gear();
-                gear.Id = g.Id;
+                foreach (Gear x in context.Gears)
+                {
+                    if (x.Id >= gear.Id)
+                    {
+                        gear.Id = x.Id + 1;
+                    }
+                }
                 gear.Name = g.Name;
                 gear.GoldValue = g.GoldValue;
                 gear.CategoryId = g.CategoryId;

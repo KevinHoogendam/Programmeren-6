@@ -26,7 +26,13 @@ namespace Ninja.Model
             using (var context = new NinjaDbEntities())
             {
                 Domain.Ninja ninja = new Domain.Ninja();
-                ninja.Id = n.Id;
+                foreach (Domain.Ninja x in context.Ninjas)
+                {
+                    if (x.Id >= ninja.Id)
+                    {
+                        ninja.Id = x.Id + 1;
+                    }
+                }
                 ninja.Name = n.Name;
                 ninja.Gold = n.Gold;
                 ninja.Gears = n.Gears;

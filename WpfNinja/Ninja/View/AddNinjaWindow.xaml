@@ -12,9 +12,6 @@
 
             <TextBlock Text="Create new Ninja" FontSize="28" />
 
-            <TextBlock Text="Id:" Margin="0,5,0,0"  />
-            <TextBox MaxLength="5" Text="{Binding Path=Ninja.Id, Mode=TwoWay}" />
-
             <TextBlock Text="Name:" Margin="0,5,0,0"  />
             <TextBox MaxLength="50" Text="{Binding Path=Ninja.Name, Mode=TwoWay}" />
 
