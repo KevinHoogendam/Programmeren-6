@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using Ninja.Domain;
 using Ninja.Model;
 using System;
 using System.Collections.Generic;
@@ -44,6 +45,30 @@ namespace Ninja.ViewModel
         {
             _repo.EditGear(Gear);
 
+            foreach (Gear gear in _categoryList.SelectedCategory.Gears.ToList<Gear>())
+            {
+                if (gear.Id == Gear.Id)
+                {
+                    _categoryList.SelectedCategory.Gears.Remove(gear);
+
+                }
+            }
+
+            foreach (CategoryViewModel c in _categoryList.Categories)
+            {
+                if (c.Id == Gear.CategoryId)
+                {
+                    Gear g = new Gear();
+                    g.Id = Gear.Id;
+                    g.Name = Gear.Name;
+                    g.GoldValue = Gear.GoldValue;
+                    g.CategoryId = Gear.CategoryId;
+                    g.Strength = Gear.Strength;
+                    g.Intelligence = Gear.Intelligence;
+                    g.Agility = Gear.Agility;
+                    c.Gears.Add(g);
+                }
+            }
             foreach (GearViewModel g in _categoryList.Gears)
             {
                 if (g.Id == Gear.Id)

@@ -50,7 +50,7 @@ namespace Ninja.Model
                 context.SaveChanges();
             }
         }
-        public void RemoveGearFromNinja(NinjaViewModel n, Gear g)
+        public void RemoveGearFromNinja(NinjaViewModel n, GearViewModel g)
         {
             using (var context = new NinjaDbEntities())
             {

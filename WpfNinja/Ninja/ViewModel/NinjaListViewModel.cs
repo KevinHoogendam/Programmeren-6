@@ -26,6 +26,12 @@ namespace Ninja.ViewModel
             set;
         }
 
+        public ObservableCollection<GearViewModel> NinjasGear
+        {
+            get;
+            set;
+        }
+
         //Dit model heeft de waarde van het liedje dat geselecteerd is. 
         //Misschien kun je dit model wel gebruiken voor de opdracht?
         private NinjaViewModel _selectedNinja;
@@ -40,13 +46,15 @@ namespace Ninja.ViewModel
             {
                 _selectedNinja = value;
                 _shopViewModel.SelectedNinja = value;
+                var ninjasGear = _selectedNinja.Gears.Select(s => new GearViewModel(s));
+                NinjasGear = new ObservableCollection<GearViewModel>(ninjasGear);
                 base.RaisePropertyChanged();
             }
         }
 
-        private Gear _selectedGear;
+        private GearViewModel _selectedGear;
 
-        public Gear SelectedGear
+        public GearViewModel SelectedGear
         {
             get
             {
@@ -56,6 +64,45 @@ namespace Ninja.ViewModel
             {
                 _selectedGear = value;
                 base.RaisePropertyChanged();
+            }
+        }
+
+        public int TotalStrength
+        {
+            get
+            {
+                int total = 0;
+                foreach (GearViewModel g in NinjasGear)
+                {
+                    total = total + g.Strength ?? default(int);                   
+                }
+                return total;
+            }
+        }
+
+        public int TotalAgility
+        {
+            get
+            {
+                int total = 0;
+                foreach (GearViewModel g in NinjasGear)
+                {
+                    total = total + g.Agility ?? default(int);
+                }
+                return total;
+            }
+        }
+
+        public int TotalIntelligence
+        {
+            get
+            {
+                int total = 0;
+                foreach (GearViewModel g in NinjasGear)
+                {
+                    total = total + g.Intelligence ?? default(int);
+                }
+                return total;
             }
         }
 
@@ -87,6 +134,7 @@ namespace Ninja.ViewModel
             ninjaRepository = new NinjaRepository();
             var ninjaList = ninjaRepository.GetNinjas().Select(s => new NinjaViewModel(s));
             Ninjas = new ObservableCollection<NinjaViewModel>(ninjaList);
+            NinjasGear = new ObservableCollection<GearViewModel>();
 
             ShowAddNinjaCommand = new RelayCommand(ShowAddNinja, CanShowAddNinja);
             DeleteNinjaCommand = new RelayCommand(DeleteNinja);
@@ -132,7 +180,8 @@ namespace Ninja.ViewModel
         private void SellGear()
         {
             ninjaRepository.RemoveGearFromNinja(SelectedNinja, SelectedGear);
-            //SelectedNinja.Gears.Remove(SelectedGear);
+            SelectedNinja.Gold = SelectedNinja.Gold + SelectedGear.GoldValue;
+            NinjasGear.Remove(SelectedGear);                        
         }
     }
 }

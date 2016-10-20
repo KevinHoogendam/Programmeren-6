@@ -48,7 +48,6 @@ namespace Ninja.ViewModel
                 {
                     Gears.Add(new GearViewModel(gear));
                 }
-               
                 base.RaisePropertyChanged();
             }
         }
@@ -150,13 +149,25 @@ namespace Ninja.ViewModel
         private void DeleteGear()
         {
             _gearRepository.RemoveGear(SelectedGear);
+            foreach (Gear gear in SelectedCategory.Gears.ToList<Gear>())
+            {
+                if (gear.Id == _selectedGear.Id)
+                {
+                    _selectedCategory.Gears.Remove(gear);
+                }
+            }
             Gears.Remove(SelectedGear);
+
         }
 
         private void BuyGear()
         {
-            _ninjaRepository.BuyGear(SelectedNinja, SelectedGear);
-            Gears.Remove(SelectedGear);
+            if (SelectedNinja.Gold >= SelectedGear.GoldValue)
+            {
+                _ninjaRepository.BuyGear(SelectedNinja, SelectedGear); 
+                SelectedNinja.Gold = SelectedNinja.Gold - SelectedGear.GoldValue;
+                //NinjaListViewModel NinjaGear lijst is nodig.            
+            }
         }
     }
 }

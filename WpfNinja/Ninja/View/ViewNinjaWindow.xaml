@@ -4,10 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ninja.View"
+        xmlns:con="clr-namespace:Ninja.Converter"
         mc:Ignorable="d"
         Title="ViewNinjaWindow" Height="500" Width="500"
         DataContext="{Binding NinjaList, Source={StaticResource Locator}}">
-        <Border BorderThickness="12">
+    <Window.Resources>
+        <con:GoldToEuroConverter x:Key="goldToEuroConverter" />
+    </Window.Resources>
+    <Border BorderThickness="12">
         <StackPanel>
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -27,7 +31,7 @@
                 </Button>
             </Grid>
 
-            <DataGrid AutoGenerateColumns="False" IsReadOnly="True" SelectedItem="{Binding SelectedGear, Mode=TwoWay}" ItemsSource="{Binding SelectedNinja.Gears}" Margin="0,6,0,0" BorderBrush="#FF979494" GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="#FFF0E0E0" HeadersVisibility="Column">
+            <DataGrid AutoGenerateColumns="False" IsReadOnly="True" SelectedItem="{Binding SelectedGear, Mode=TwoWay}" ItemsSource="{Binding NinjasGear}" Margin="0,6,0,0" BorderBrush="#FF979494" GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="#FFF0E0E0" HeadersVisibility="Column">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="#" Binding="{Binding Id}" Foreground="#FF1D1616" />
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*" />
@@ -38,6 +42,14 @@
                         Foreground="White" FontWeight="Bold" Background="Red" 
                         Grid.Column="0"  Command="{Binding SellGearCommand}">
             </Button>
+            <TextBlock Text="Strength:" FontSize="18" Grid.Column="0" Grid.Row="0"/>
+            <TextBlock Text="{Binding TotalStrength}" FontSize="18" Grid.Column="2" Grid.Row="0"/>
+            <TextBlock Text="Agility:" FontSize="18" Grid.Column="0" Grid.Row="1"/>
+            <TextBlock Text="{Binding TotalAgility}" FontSize="18" Grid.Column="2" Grid.Row="1"/>
+            <TextBlock Text="Intelligence:" FontSize="18" Grid.Column="0" Grid.Row="2"/>
+            <TextBlock Text="{Binding TotalIntelligence}" FontSize="18" Grid.Column="2" Grid.Row="2"/>
+            <TextBlock Text="Your Gold in Euro:" FontSize="18" Grid.Column="0" Grid.Row="3"/>
+            <TextBlock Text="{Binding SelectedNinja.Gold, Converter= {StaticResource goldToEuroConverter}}" FontSize="18" Grid.Column="2" Grid.Row="3"/>
         </StackPanel>
     </Border>
 </Window>
