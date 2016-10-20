@@ -163,8 +163,20 @@ namespace Ninja.ViewModel
 
         private void BuyGear()
         {
-            _ninjaRepository.BuyGear(SelectedNinja, SelectedGear);
-            Gears.Remove(SelectedGear);
+            bool canbuy = true;
+            foreach (Gear g in _selectedNinja.Gears)
+            {
+                if (g.CategoryId == SelectedGear.CategoryId) canbuy = false;
+            }
+            if (canbuy)
+            {
+                _ninjaRepository.BuyGear(SelectedNinja, SelectedGear);
+                Gears.Remove(SelectedGear);
+            }
+            else
+            {
+                MessageBoxResult result = MessageBox.Show("You already have some gear from this category", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }
