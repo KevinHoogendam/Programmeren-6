@@ -9,7 +9,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using Ninja;
 using System;
 using System.Diagnostics;
 using System.Windows;
@@ -32,7 +31,7 @@ using System.Windows.Shapes;
 using System.Windows.Shell;
 
 
-namespace Ninja {
+namespace MusicCollectionMVVMLight {
     
     
     /// <summary>

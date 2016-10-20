@@ -1,0 +1,9 @@
+C:\Users\khoog\Desktop\WpfNinja\Ninja.Domain\bin\Debug\Ninja.Domain.dll.config
+C:\Users\khoog\Desktop\WpfNinja\Ninja.Domain\bin\Debug\Ninja.Domain.dll
+C:\Users\khoog\Desktop\WpfNinja\Ninja.Domain\bin\Debug\Ninja.Domain.pdb
+C:\Users\khoog\Desktop\WpfNinja\Ninja.Domain\bin\Debug\EntityFramework.dll
+C:\Users\khoog\Desktop\WpfNinja\Ninja.Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\khoog\Desktop\WpfNinja\Ninja.Domain\bin\Debug\EntityFramework.xml
+C:\Users\khoog\Desktop\WpfNinja\Ninja.Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\khoog\Desktop\WpfNinja\Ninja.Domain\obj\Debug\Ninja.Domain.dll
+C:\Users\khoog\Desktop\WpfNinja\Ninja.Domain\obj\Debug\Ninja.Domain.pdb

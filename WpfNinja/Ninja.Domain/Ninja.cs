@@ -14,8 +14,17 @@ namespace Ninja.Domain
     
     public partial class Ninja
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Ninja()
+        {
+            this.Gears = new HashSet<Gear>();
+        }
+    
         public int Id { get; set; }
         public string Name { get; set; }
         public Nullable<int> Gold { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Gear> Gears { get; set; }
     }
 }

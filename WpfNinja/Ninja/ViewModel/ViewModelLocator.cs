@@ -31,18 +31,9 @@ namespace Ninja.ViewModel
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
-            ////if (ViewModelBase.IsInDesignModeStatic)
-            ////{
-            ////    // Create design time view services and models
-            ////    SimpleIoc.Default.Register<IDataService, DesignDataService>();
-            ////}
-            ////else
-            ////{
-            ////    // Create run time view services and models
-            ////    SimpleIoc.Default.Register<IDataService, DataService>();
-            ////}
 
-            SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<CategoryListViewModel>();
+            SimpleIoc.Default.Register<NinjaListViewModel>();
         }
 
         public MainViewModel Main
@@ -52,7 +43,47 @@ namespace Ninja.ViewModel
                 return ServiceLocator.Current.GetInstance<MainViewModel>();
             }
         }
-        
+
+        public NinjaListViewModel NinjaList
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<NinjaListViewModel>();
+            }
+        }
+
+        public AddNinjaViewModel AddNinja
+        {
+            get
+            {
+                return new AddNinjaViewModel(this.NinjaList);
+            }
+        }
+
+        public AddGearViewModel AddGear
+        {
+            get
+            {
+                return new AddGearViewModel(this.CategoryList);
+            }
+        }
+
+        public EditGearViewModel EditGear
+        {
+            get
+            {
+                return new EditGearViewModel(this.CategoryList);
+            }
+        }
+
+        public CategoryListViewModel CategoryList
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<CategoryListViewModel>();
+            }
+        }
+
         public static void Cleanup()
         {
             // TODO Clear the ViewModels

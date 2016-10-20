@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Kevin\Documents\Visual Studio 2015\Projects\WpfNinja\Ninja\obj\Debug\
+C:\Users\khoog\Desktop\WpfNinja\Ninja\obj\Debug\
 Ninja
 none
 false
 DEBUG;TRACE
-C:\Users\Kevin\Documents\Visual Studio 2015\Projects\WpfNinja\Ninja\App.xaml
-11151548125
+C:\Users\khoog\Desktop\WpfNinja\Ninja\App.xaml
+6598128314
 
-7-1946522864
-72-564618062
-MainWindow.xaml;
+23-781861995
+73-1644443754
+View\AddGearWindow.xaml;View\AddNinjaWindow.xaml;View\EditGearWindow.xaml;View\MainWindow.xaml;View\ShopWindow.xaml;View\ViewNinjaWindow.xaml;
 
 False
 

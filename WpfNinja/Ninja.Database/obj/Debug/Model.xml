@@ -12,7 +12,7 @@
 		</CustomData>
 		<CustomData Category="Reference" Type="Assembly">
 			<Metadata Name="LogicalName" Value="Ninja.Database.dll" />
-			<Metadata Name="FileName" Value="C:\USERS\KHOOG\DOCUMENTS\GITHUB\PROGRAMMEREN-6\WPFNINJA\NINJA.DATABASE\OBJ\DEBUG\NINJA.DATABASE.DLL" />
+			<Metadata Name="FileName" Value="C:\USERS\KHOOG\DESKTOP\WPFNINJA\NINJA.DATABASE\OBJ\DEBUG\NINJA.DATABASE.DLL" />
 			<Metadata Name="AssemblyName" Value="Ninja.Database" />
 			<Metadata Name="PermissionSet" Value="SAFE" />
 			<Metadata Name="Owner" Value="" />
@@ -20,7 +20,7 @@
 			<Metadata Name="IsVisible" Value="True" />
 			<Metadata Name="IsModelAware" Value="True" />
 			<Metadata Name="SkipCreationIfEmpty" Value="True" />
-			<Metadata Name="AssemblySymbolsName" Value="C:\Users\khoog\Documents\GitHub\Programmeren-6\WpfNinja\Ninja.Database\obj\Debug\Ninja.Database.pdb" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\Users\khoog\Desktop\WpfNinja\Ninja.Database\obj\Debug\Ninja.Database.pdb" />
 		</CustomData>
 		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
 	</Header>
@@ -49,7 +49,16 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[Ninja].[Id]" />
+								<References Name="[dbo].[NinjaHasGear].[NinjaId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[NinjaHasGear].[GearId]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -57,7 +66,7 @@
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[Ninja]" />
+					<References Name="[dbo].[NinjaHasGear]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
@@ -87,7 +96,7 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[Gear].[Id]" />
+								<References Name="[dbo].[Ninja].[Id]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -95,7 +104,7 @@
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[Gear]" />
+					<References Name="[dbo].[Ninja]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
@@ -106,16 +115,7 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[NinjaHasGear].[NinjaId]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-				<Entry>
-					<Element Type="SqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
-								<References Name="[dbo].[NinjaHasGear].[GearId]" />
+								<References Name="[dbo].[Gear].[Id]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -123,7 +123,7 @@
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[NinjaHasGear]" />
+					<References Name="[dbo].[Gear]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
@@ -258,7 +258,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="5" />
+						<AttachedAnnotation Disambiguator="6" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -325,7 +325,7 @@
 					</Element>
 				</Entry>
 				<Entry>
-					<Element Type="SqlSimpleColumn" Name="[dbo].[Gear].[agility]">
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Gear].[Agility]">
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
@@ -380,7 +380,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="3" />
+						<AttachedAnnotation Disambiguator="5" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -462,7 +462,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="6" />
+			<AttachedAnnotation Disambiguator="3" />
 			<AttachedAnnotation Disambiguator="9" />
 			<AttachedAnnotation Disambiguator="8" />
 		</Element>
