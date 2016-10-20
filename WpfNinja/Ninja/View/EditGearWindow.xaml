@@ -9,11 +9,7 @@
         DataContext="{Binding EditGear, Source={StaticResource Locator}}">
     <Border BorderThickness="12">
         <StackPanel>
-
             <TextBlock Text="Edit Gear" FontSize="28" />
-
-            <TextBlock Text="Id:" Margin="0,5,0,0"  />
-            <TextBox MaxLength="5" Text="{Binding Path=Gear.Id, Mode=TwoWay}" />
 
             <TextBlock Text="Name:" Margin="0,5,0,0"  />
             <TextBox MaxLength="50" Text="{Binding Path=Gear.Name, Mode=TwoWay}" />

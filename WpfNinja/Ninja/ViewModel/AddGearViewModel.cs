@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace Ninja.ViewModel
@@ -53,9 +54,17 @@ namespace Ninja.ViewModel
 
         private void AddGear()
         {
-            _GearRepo.AddGear(Gear);
-            _categoryList.Gears.Add(Gear);
-            _categoryList.HideAddGear();
+
+            if (Gear.Intelligence != null && Gear.Strength != null && Gear.Agility != null && Gear.Name != null && Gear.Name.Replace(" ", "") != String.Empty)
+            {
+                _GearRepo.AddGear(Gear);
+                _categoryList.Gears.Add(Gear);
+                _categoryList.HideAddGear();
+            }
+            else
+            {
+                MessageBoxResult result = MessageBox.Show("Please fill in all fields correctly", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         public bool CanAddGear()

@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace Ninja.ViewModel
@@ -34,26 +35,37 @@ namespace Ninja.ViewModel
         public EditGearViewModel(CategoryListViewModel categoryList)
         {
             this._categoryList = categoryList;
-            this.Gear = _categoryList.SelectedGear;
-            this._repo = new GearRepository();
-            Categories = _categoryList.Categories;
-            EditGearCommand = new RelayCommand(EditGear, CanEditGear);
+            if (categoryList.SelectedGear != null)
+            {
+                this.Gear = _categoryList.SelectedGear;
+                this._repo = new GearRepository();
+                Categories = _categoryList.Categories;
+                EditGearCommand = new RelayCommand(EditGear, CanEditGear);
+            }
         }
 
         private void EditGear()
         {
-            _repo.EditGear(Gear);
-
-            foreach (GearViewModel g in _categoryList.Gears)
+            if (Gear.Intelligence != null && Gear.Strength != null && Gear.Agility != null && Gear.Name != null && Gear.Name.Replace(" ", "") != String.Empty)
             {
-                if (g.Id == Gear.Id)
+                _repo.EditGear(Gear);
+
+                foreach (GearViewModel g in _categoryList.Gears)
                 {
-                    _categoryList.Gears.Remove(g);
-                    break;
+                    if (g.Id == Gear.Id)
+                    {
+                        _categoryList.Gears.Remove(g);
+                        break;
+                    }
                 }
+                _categoryList.Gears.Add(Gear);
+                _categoryList.HideEditGear();
             }
-            _categoryList.Gears.Add(Gear);
-            _categoryList.HideEditGear();
+            else
+            {
+                MessageBoxResult result = MessageBox.Show("Please fill in all fields correctly", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
         }
 
         public bool CanEditGear()

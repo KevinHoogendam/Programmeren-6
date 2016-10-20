@@ -9,6 +9,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace Ninja.ViewModel
@@ -133,8 +134,15 @@ namespace Ninja.ViewModel
 
         public void ShowEditGear()
         {
-            _editGearWindow = new EditGearWindow();
-            _editGearWindow.Show();
+            if (_selectedGear != null)
+            {
+                _editGearWindow = new EditGearWindow();
+                _editGearWindow.Show();
+            }
+            else
+            {
+                MessageBoxResult result = MessageBox.Show("No Gear Selected", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         public bool CanShowEditGear()
