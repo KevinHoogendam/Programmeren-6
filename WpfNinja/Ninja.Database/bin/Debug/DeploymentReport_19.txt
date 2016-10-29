@@ -1,0 +1,21 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[NinjaHasGear]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Table rebuild
+       [dbo].[NinjaHasGear] (Table)
+
+** Supporting actions
+     Drop
+       [dbo].[FK_NinjaHasGear_Gear] (Foreign Key)
+       [dbo].[FK_NinjaHasGear_Ninja] (Foreign Key)
+     Create
+       [dbo].[FK_NinjaHasGear_Gear] (Foreign Key)
+       [dbo].[FK_NinjaHasGear_Ninja] (Foreign Key)
